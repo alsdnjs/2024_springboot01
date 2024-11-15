@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class SampleController {
@@ -84,4 +87,13 @@ public class SampleController {
             return DataVO.fail(0, "실패");
         }
       }
-}
+
+      @PostMapping("/hi")
+      public String getGi() {
+          return "hi, 안녕 ";
+      }
+      @PostMapping("/hi2")
+      public String[] getHi2(String idx) {
+          return new String[] {"Hello","World "};
+      }
+    }
